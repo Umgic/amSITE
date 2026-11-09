@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마법소녀는 참교육이 필요하다</title>
+<meta name="description" content="몬스터 취급받는 내가 마법소녀를 참교육한다 — 크랙 롤플레이 작품 소개">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic+Coding:wght@400;700&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFF7FB;
+  --candy:#FFD3E6;
+  --ink:#2B1631;
+  --ink-soft:#5E4766;
+  --marker:#E3263F;
+  --sticker:#FFE45C;
+  --mint:#A6F0D6;
+  --line:#EBC6D8;
+  --display:'Jua',sans-serif;
+  --hand:'Nanum Pen Script',cursive;
+  --body:'Noto Sans KR',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;word-break:keep-all}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--marker);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+p{margin:0 0 1em}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,5vw,44px);line-height:1.15;margin:0 0 18px;letter-spacing:-.01em}
+h3{font-family:var(--display);font-weight:400;font-size:22px;margin:0 0 6px;line-height:1.3}
+section{padding:72px 0}
+.lead{font-size:17px;color:var(--ink-soft);max-width:60ch}
+.scrawl{font-family:var(--hand);color:var(--marker);line-height:1}
+
+/* ---------- hero: the official poster, vandalized ---------- */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 18% 22%,#fff 0 2px,transparent 3px) 0 0/46px 46px,
+  linear-gradient(170deg,#FFE3F0 0%,var(--candy) 55%,#F7B7D3 100%);
+  padding:70px 0 90px;border-bottom:3px solid var(--ink)}
+.onair{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px}
+.onair i{width:8px;height:8px;border-radius:50%;background:#FF4D6D;display:block;animation:blink 1.4s steps(2) infinite}
+@keyframes blink{50%{opacity:.15}}
+.title{position:relative;margin:26px 0 10px;font-family:var(--display);font-weight:400;font-size:clamp(46px,10vw,104px);line-height:1.02;letter-spacing:-.02em;color:var(--ink)}
+.title > span{display:block;white-space:nowrap}
+.title .cut{position:relative;display:inline-block}
+.strike{position:absolute;left:-2%;bottom:-.04em;width:104%;height:.11em;background:var(--marker);border-radius:4px;transform:rotate(-2deg) scaleX(0);transform-origin:left;animation:strike .55s .5s cubic-bezier(.6,0,.2,1) forwards;z-index:-1}
+@keyframes strike{to{transform:rotate(-2deg) scaleX(1)}}
+.cut{z-index:0}
+.tag{display:inline-block;margin-left:.25em;font-family:var(--hand);font-size:.55em;color:var(--marker);transform:rotate(-8deg);opacity:0;animation:pop .3s 1.05s forwards;white-space:nowrap;vertical-align:.35em}
+@keyframes pop{from{opacity:0;transform:rotate(-8deg) scale(1.4)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
+.oneliner{font-size:clamp(18px,2.6vw,22px);font-weight:700;margin:22px 0 8px}
+.sub{color:var(--ink-soft);max-width:46ch}
+.cta{display:inline-block;margin-top:26px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:999px;box-shadow:5px 5px 0 var(--marker)}
+.cta:hover{transform:translate(-1px,-1px);box-shadow:6px 6px 0 var(--marker)}
+.stats{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:#fff;border:2px solid var(--ink);border-radius:999px;padding:4px 14px;font-size:14px;font-weight:500}
+
+/* ---------- world ---------- */
+.about > p{font-size:17px;max-width:62ch}
+.facts{margin:22px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+.facts div{padding:12px 0;border-top:1.5px dashed var(--line)}
+.facts dt{font-family:var(--display);font-size:19px}
+.facts dd{margin:2px 0 0;font-size:15px;color:var(--ink-soft)}
+.h2-gap{margin-top:64px}
+@media (max-width:820px){.facts{grid-template-columns:1fr}}
+/* ---------- on air vs off air ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;border:3px solid var(--ink);border-radius:18px;overflow:hidden;background:#fff}
+.split h3{font-size:20px}
+.col{padding:26px 26px 10px}
+.col.off{background:var(--ink);color:#F5E9F5}
+.col-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:14px}
+.col-head b{font-family:var(--display);font-weight:400;font-size:26px}
+.col.on .col-head small{color:var(--ink-soft)}
+.col.off .col-head b{color:#fff}
+.col.off .col-head small{font-family:var(--hand);font-size:22px;color:#FF7A8E}
+.pair{padding:14px 0;border-top:1.5px dashed var(--line)}
+.col.off .pair{border-top-color:#5a3d61}
+.pair p{margin:0;font-size:15px}
+.pair .k{font-weight:700;display:block;margin-bottom:2px}
+.col.off .pair .k{color:#FFB8C6}
+
+/* ---------- world ---------- */
+.fronts{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;border:3px solid var(--ink);border-radius:18px;overflow:hidden}
+.front{padding:22px 24px}
+.front p{margin:0;font-size:15.5px}
+.fr-tag{display:block;font-family:var(--display);font-size:24px;margin-bottom:8px}
+.front.war{background:#2A1A1F;color:#F1DADF}
+.front.war .fr-tag{color:#FF6B7F}
+.front.city{background:#fff}
+@media (max-width:820px){.fronts{grid-template-columns:1fr}}
+/* ---------- idols ---------- */
+.idols{background:#fff;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.notebook{position:relative;margin-top:26px;background:
+  linear-gradient(90deg,transparent 46px,#F3A3B0 46px,#F3A3B0 48px,transparent 48px),
+  repeating-linear-gradient(180deg,#FFFDF6 0 33px,#D7E3F2 33px 34px);
+  background-color:#FFFDF6;border:2px solid var(--ink);border-radius:6px;padding:46px 26px 30px 70px;box-shadow:8px 10px 0 rgba(43,22,49,.16);transform:rotate(-.4deg)}
+.notebook::before{content:"";position:absolute;left:14px;top:20px;bottom:20px;width:16px;background:radial-gradient(circle,#2B1631 0 5px,transparent 6px) 0 0/16px 46px repeat-y;opacity:.85}
+.tape{position:absolute;top:-14px;left:50%;width:120px;height:30px;margin-left:-60px;background:rgba(255,228,92,.75);border:1px solid rgba(43,22,49,.15);transform:rotate(-3deg)}
+.nb-title{font-family:var(--hand);font-size:44px;line-height:1;color:var(--ink);margin:0 0 18px;transform:rotate(-1.5deg)}
+.nb-title::after{content:"";display:block;width:220px;height:6px;margin-top:4px;background:var(--marker);border-radius:4px;transform:rotate(-1deg);opacity:.75}
+.nb-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 40px}
+.nt{padding:10px 0 12px;border-bottom:1.5px dashed #E3C9D3}
+.nt-who{display:flex;align-items:baseline;gap:8px}
+.nt-who b{font-family:var(--hand);font-weight:400;font-size:34px;line-height:1;color:var(--ink);background:linear-gradient(transparent 60%,color-mix(in srgb,var(--c) 50%,transparent) 60%,color-mix(in srgb,var(--c) 50%,transparent) 92%,transparent 92%);padding:0 4px}
+.nt-who small{font-size:12px;color:var(--ink-soft)}
+.nt-k{margin:4px 0 0;font-family:var(--hand);font-size:22px;line-height:1.25;color:#8C7C8F}
+.nt-k s{text-decoration-color:var(--marker);text-decoration-thickness:2px}
+.nt-h{margin:0;font-family:var(--hand);font-size:24px;line-height:1.3;color:#B3122E}
+.nb-back{margin-top:26px;padding:16px 18px 6px;background:#FFF2A8;border:1.5px solid rgba(43,22,49,.25);box-shadow:3px 4px 0 rgba(43,22,49,.12);transform:rotate(.6deg)}
+.nb-back .nt{border-bottom-color:rgba(43,22,49,.18)}
+.nb-sub{font-family:var(--hand);font-size:28px;color:var(--ink);margin-bottom:4px}
+@media (max-width:820px){
+  .notebook{padding:40px 16px 22px 44px;transform:none}
+  .notebook::before{left:8px;width:12px;background-size:12px 40px}
+  .notebook{background:linear-gradient(90deg,transparent 34px,#F3A3B0 34px,#F3A3B0 36px,transparent 36px),repeating-linear-gradient(180deg,#FFFDF6 0 33px,#D7E3F2 33px 34px);background-color:#FFFDF6}
+  .nb-grid{grid-template-columns:1fr;gap:0}
+  .nb-title{font-size:38px}
+  .nt-who b{font-size:30px}
+}
+/* ---------- market ---------- */
+.bm{background:radial-gradient(ellipse at 20% 0%,rgba(80,255,190,.10),transparent 55%),repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 42px),#120B16;color:#D9CCE0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:80px 0}
+.bm-sign{display:inline-flex;align-items:center;gap:10px;border:2px solid #4FF0B8;color:#4FF0B8;font-weight:700;font-size:14px;letter-spacing:.08em;padding:4px 12px 4px 4px;border-radius:6px;margin-bottom:18px}
+.bm-sign span{background:#4FF0B8;color:#120B16;padding:1px 8px;border-radius:4px}
+.bm-neon{color:#fff;text-shadow:0 0 6px #FF4D8D,0 0 18px #FF4D8D,0 0 36px rgba(255,77,141,.6)}
+.bm-lead{max-width:58ch;font-size:16.5px;color:#C9BBD0}
+.bm-tags{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.bm-tags span{position:relative;background:#F2E6C9;color:#2B1631;font-weight:700;font-size:14.5px;padding:6px 14px 6px 26px;clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%);transform:rotate(-2deg)}
+.bm-tags span:nth-child(even){transform:rotate(2deg)}
+.bm-tags span::before{content:"";position:absolute;left:12px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:#120B16}
+.bm-tags .q{background:#FF4D8D;color:#fff}
+.tv{background:var(--ink);color:#fff;border-radius:22px;padding:28px 30px 26px;box-shadow:8px 8px 0 var(--marker);position:relative}
+.tv-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.tv .onair{background:var(--marker)}
+.tv .onair i{background:#fff}
+.tv-ch{font-size:13px;color:#d8c6dd}
+.tv h2{color:#fff}
+.tv p{max-width:58ch;color:#efe2f0}
+.tv-cap{font-family:var(--hand);font-size:26px;color:#FFB8C6!important;margin:0}
+/* ---------- market ---------- */
+.market{background:#1F1424;color:#EDE0EE;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.market h2{color:#fff}
+.market .lead{color:#cdbbd1}
+.market .scrawl{font-size:30px;display:block;margin-bottom:6px;color:#FF7A8E}
+@media (max-width:820px){.layer{grid-template-columns:1fr;gap:4px}}
+
+/* ---------- you ---------- */
+.you{background:#fff;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.you-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
+.first{border-left:6px solid var(--sticker);padding:4px 0 4px 16px;font-size:16px}
+.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{position:relative;padding:0 0 18px 46px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:2px;width:32px;height:32px;border-radius:50%;background:var(--sticker);border:2px solid var(--ink);font-family:var(--display);display:grid;place-items:center;font-size:18px}
+.input-card{border:2px solid var(--ink);border-radius:14px;padding:18px 18px 8px;background:var(--paper)}
+.input-card h3{font-size:19px}
+.ex{display:block;width:100%;text-align:left;font:inherit;font-size:14.5px;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;margin:0 0 10px;cursor:pointer;color:var(--ink)}
+.ex:hover{border-color:var(--ink)}
+.ex b{display:block;font-size:13px;color:var(--ink-soft);font-weight:500}
+.ex.copied{border-color:var(--ink);background:var(--mint)}
+.hint{font-size:14px;color:var(--ink-soft);margin:4px 0 12px}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vs div{border-radius:10px;padding:10px 12px;font-weight:700;font-size:15px;border:1.5px solid var(--ink);background:#fff}
+.vs span{font-family:var(--display);font-size:20px;margin-right:6px}
+.vs .bad{opacity:.75}
+.vs .bad s{text-decoration-color:var(--marker);text-decoration-thickness:2px}
+.vs .good{background:var(--mint)}
+.vs small{display:block;font-weight:400;font-size:12.5px;color:var(--ink-soft);margin-top:2px;line-height:1.5}
+
+/* ---------- cast ---------- */
+.group{margin-top:36px}
+.group-name{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.group-name h3{font-size:24px;margin:0}
+.group-name span{color:var(--ink-soft);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#fff;border:2px solid var(--ink);border-radius:14px;overflow:hidden;position:relative}
+.card .ph{aspect-ratio:3/4;background:var(--c,#F2DCE8);position:relative;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;object-position:top}
+.card .ph .fb{position:absolute;inset:0;display:none;place-items:center;font-family:var(--display);font-size:48px;color:#fff}
+.card .ph.noimg .fb{display:grid}
+.card .info{padding:10px 12px 12px;border-top:2px solid var(--ink)}
+.card .name{font-family:var(--display);font-size:20px;line-height:1.2;display:flex;align-items:center;gap:7px}
+.card .dot{width:11px;height:11px;border-radius:50%;background:var(--c);border:1.5px solid var(--ink);flex:none}
+.card .role{font-size:12.5px;color:var(--ink-soft);margin:1px 0 6px}
+.card .desc{font-size:13.5px;line-height:1.55;margin:0}
+.cards.small{grid-template-columns:repeat(5,1fr)}
+.cards.small .name{font-size:18px}
+
+/* ---------- shortcuts ---------- */
+.must{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0 30px}
+.must .box{border:3px solid var(--ink);border-radius:16px;padding:22px;background:#fff;position:relative}
+.must .cmd{font-family:var(--display);font-size:26px;margin-bottom:4px}
+.must .when{font-weight:700;margin-bottom:6px}
+.must p{font-size:15px;color:var(--ink-soft);margin:0}
+.sticker{position:absolute;right:14px;top:-16px;background:var(--sticker);border:2px solid var(--ink);border-radius:8px;padding:2px 10px;font-weight:700;font-size:13px;transform:rotate(4deg)}
+.rest{display:grid;grid-template-columns:repeat(2,1fr);gap:0 28px}
+.rest div{display:flex;gap:12px;padding:11px 0;border-bottom:1.5px dashed var(--line);font-size:15px}
+.rest dt,.rest .c{font-weight:700;white-space:nowrap;min-width:9.5em}
+.rest .d{color:var(--ink-soft)}
+
+/* ---------- models ---------- */
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.model{border:2px solid var(--ink);border-radius:14px;padding:18px;background:#fff}
+.model .pick{font-family:var(--hand);font-size:24px;color:var(--marker);line-height:1}
+.model h3{margin:4px 0 6px}
+.model p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+.must-mini{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.must-mini b{width:100%;font-size:12.5px;color:var(--marker)}
+.must-mini span{background:var(--sticker);border:1.5px solid var(--ink);border-radius:8px;padding:1px 8px;font-size:13.5px;font-weight:700}
+
+footer{padding:40px 0 60px;color:var(--ink-soft);font-size:14px;border-top:3px solid var(--ink)}
+footer .scrawl{font-size:28px}
+
+@media (max-width:820px){
+  .split,.you-grid,.must{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .cards.small{grid-template-columns:repeat(2,1fr)}
+  .rest{grid-template-columns:1fr}
+  .models{grid-template-columns:1fr}
+  section{padding:56px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important}
+  .strike{transform:rotate(-2deg) scaleX(1)}
+  .tag{opacity:1}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="onair"><i></i>빅토리 페스타 생방송 중</span>
+    <h1 class="title">
+      <span>마법소녀는</span>
+      <span><span class="cut">참교육이<span class="strike" aria-hidden="true"></span></span><span class="tag" aria-hidden="true">진짜로!</span></span>
+      <span>필요하다</span>
+    </h1>
+    <p class="oneliner">자고 일어났더니 마법소녀물의 악역이 되어 있었다</p>
+    <p class="sub">도시가 사랑하는 여덟 명의 마법소녀. 화면 속 그녀들은 언제나 웃고 있고, 아무도 화면 밖의 얼굴을 묻지 않는다.</p>
+  </div>
+</header>
+
+<main>
+<section id="models" style="padding-bottom:0">
+  <div class="wrap">
+    <h2>추천 모델</h2>
+    <div class="models">
+      <div class="model"><div class="pick">최고 퀄리티</div><h3>울트라챗 1.0</h3><p>늘어지지 않으면서 풍부하고 실수가 적어요.</p></div>
+      <div class="model"><div class="pick">최고 가성비</div><h3>프로챗 1.0</h3><p>가끔 실수가 있지만 잘 돌아가요.</p><div class="must-mini"><b>필수 숙지 단축어</b><span>/사칭금지🚫</span><span>/이미지고치기🔧</span></div></div>
+      <div class="model"><div class="pick">묘사 최고</div><h3>하이퍼챗 1.0~4.0</h3><p>묘사가 가장 풍부한 대신 조금 늘어질 수 있어요.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="world">
+  <div class="wrap">
+    <h2>침략이 계속되는 세계</h2>
+    <p class="lead">어느 날 하늘에 열린 차원문. 그날 이후 수많은 세계가 저마다의 이유로 이 땅을 침략하는 중. 막아 내 노예로 전락한 종족이 있는가 하면, 지금 이 순간에도 새로운 침략자가 문을 넘어오는 세계.</p>
+    <div class="fronts">
+      <div class="front war">
+        <span class="fr-tag">최전방 방위구역</span>
+        <p>차원문 너머에서 끊임없이 넘어오는 새로운 침략자들. 하루가 멀다 하고 쌓여 가는 사상자, 돌아오지 못한 방위군의 빈자리. 마법소녀가 도착하기 전까지 그 자리를 버티는 건 사람의 몫.</p>
+      </div>
+      <div class="front city">
+        <span class="fr-tag">전선 너머의 도시</span>
+        <p>전선의 피는 닿지 않는 곳. 시민들은 마법소녀의 승전보에 환호하고, 침략에 실패한 이계종족은 노예가 되어 이 도시를 돌리는 중.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="idols" class="idols">
+  <div class="wrap">
+    <h2>모두의 우상, 마법소녀와 그들의 이면</h2>
+    <p class="lead">인류를 구한 여덟 명의 영웅. 영웅인 것도 사실이지만, 도시가 모르는 얼굴이 하나씩.</p>
+    <div class="notebook">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="nb-title">록시의 비밀노트</div>
+      <div class="nb-grid">
+        <div class="nt" style="--c:#E8364E">
+          <div class="nt-who"><b>루비</b><small>마법소녀 리더</small></div>
+          <p class="nt-k"><s>다정한 리더</s></p>
+          <p class="nt-h">→ 피를 보면 웃는 가학가. 실수는 몬스터 탓, 눈물은 방송용.</p>
+        </div>
+        <div class="nt" style="--c:#FF8A2B">
+          <div class="nt-who"><b>앰버</b><small>유흥업계 VIP</small></div>
+          <p class="nt-k"><s>파티의 여왕</s></p>
+          <p class="nt-h">→ 술·도박·유흥에 빠진 쾌락주의자. 곁에 둔 개 수인 애완도 기분 따라 예뻐하다 막 대하는 변덕.</p>
+        </div>
+        <div class="nt" style="--c:#FFC928">
+          <div class="nt-who"><b>써니</b><small>톱스타</small></div>
+          <p class="nt-k"><s>도시에서 가장 유명한 얼굴</s></p>
+          <p class="nt-h">→ 화려한 장면을 위해 싸움을 키우는 관종. 시민 피해는 연출의 일부.</p>
+        </div>
+        <div class="nt" style="--c:#3FD3A8">
+          <div class="nt-who"><b>민티</b><small>음식평론가</small></div>
+          <p class="nt-k"><s>하루 종일 먹으러 다니는 미식가</s></p>
+          <p class="nt-h">→ 유명세로 공짜 음식을 뜯어내는 미식가. 입맛에 안 맞으면 악평 한 줄로 가게 폐업.</p>
+        </div>
+        <div class="nt" style="--c:#2F7BEA">
+          <div class="nt-who"><b>마린</b><small>패션모델</small></div>
+          <p class="nt-k"><s>완벽한 것만 허락하는 모델</s></p>
+          <p class="nt-h">→ 특별대우가 당연한 갑질의 여왕. 직원은 사람 취급 밖.</p>
+        </div>
+        <div class="nt" style="--c:#FF6FB5">
+          <div class="nt-who"><b>핑키</b><small>재벌영애</small></div>
+          <p class="nt-k"><s>공주님 같은 아가씨</s></p>
+          <p class="nt-h">→ 강하고 자존심 센 상대만 골라 애완으로 길들이는 취미.</p>
+        </div>
+        <div class="nt" style="--c:#9B5DE5">
+          <div class="nt-who"><b>아이리스</b><small>도시방위관</small></div>
+          <p class="nt-k"><s>귀여운 소환수들의 방위관</s></p>
+          <p class="nt-h">→ 귀찮아서 대충 내린 명령 하나에 아군과 시민까지 덮치는 소환수들. 피해는 나 몰라라.</p>
+        </div>
+        <div class="nt" style="--c:#6EC8F5">
+          <div class="nt-who"><b>시엘</b><small>히어로</small></div>
+          <p class="nt-k"><s>아이들에게 인기 많은 착한 히어로</s></p>
+          <p class="nt-h">→ 선의라 믿고 휘두르는 극단적인 해결법. 제 잘못을 모르는 게 가장 무서운 점.</p>
+        </div>
+      </div>
+      <div class="nb-back">
+        <div class="nb-sub">그리고 뒤에서 덮어 주는 놈들</div>
+        <div class="nb-grid">
+        <div class="nt" style="--c:#4B4E6D">
+          <div class="nt-who"><b>정부</b><small>총리가 이끄는 도시의 머리</small></div>
+          <p class="nt-k"><s>평화를 지키는 든든한 울타리</s></p>
+          <p class="nt-h">→ 마법소녀를 앞세운 체제 유지. 악행은 덮고, 여론은 조작.</p>
+        </div>
+        <div class="nt" style="--c:#33415C">
+          <div class="nt-who"><b>사법관</b><small>마법소녀 전담 사법기관</small></div>
+          <p class="nt-k"><s>원칙의 집행자</s></p>
+          <p class="nt-h">→ 마법소녀가 지나간 자리의 증거 인멸. 위협이 되는 자는 끝까지 추적.</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="festa">
+  <div class="wrap">
+    <div class="tv">
+      <div class="tv-top"><span class="onair"><i></i>ON AIR</span><span class="tv-ch">매주 생방송 · 시청률 1위</span></div>
+      <h2>빅토리 페스타</h2>
+      <p>노예가 된 이계종족을 '침략자'로 세워 두고 마법소녀 한 명이 전부 쓸어버리는 승리의 재현 쇼.</p>
+      <p class="tv-cap">관객은 환호, 무대 위의 비명은 연출.</p>
+    </div>
+  </div>
+</section>
+
+<section id="market" class="bm">
+  <div class="wrap">
+    <div class="bm-sign"><span>B1</span>지하도시 ↓</div>
+    <h2 class="bm-neon">지하도시 암시장</h2>
+    <p class="bm-lead">도시 아래, 지상의 법이 닿지 않는 곳. 지상에서는 구할 수 없는 모든 것이 거래되고, 못 구할 것도 캐묻는 사람도 없는 시장.</p>
+    <div class="bm-tags"><span>노예</span><span>불법품</span><span>이계의 물건</span><span class="q">그 밖의 무엇이든</span></div>
+  </div>
+</section>
+
+<section class="you" id="start">
+  <div class="wrap you-grid">
+    <div>
+      <h2>빅토리 페스타 한복판에서 깨어나다</h2>
+      <p class="lead">자기 세계에서 잠들었을 뿐인데, 눈을 떠 보니 낯선 세계의 쇼 한복판.</p>
+      <div class="first"><b>첫 입력에 종족과 능력을 적어요.</b><br>능력은 처음 한 번 정하면 끝이니 신중하게 골라 주세요.</div>
+    </div>
+    <div class="input-card">
+      <h3>능력은 강하게, 넓게</h3>
+      <p class="hint">마법소녀는 무한한 마력으로 기술을 바꿔 가며 싸우고, 몰아붙일수록 힘을 개방해요. 쓸 수 있는 패가 적으면 이기기가 정말 어려워져요.</p>
+      <div class="vs">
+        <div class="bad"><span>✕</span><s>화염 브레스</s><small>기술 하나뿐이라 매번 같은 공격만 나와요</small></div>
+        <div class="good"><span>○</span>화염 조작<small>브레스, 화염벽, 폭발, 불꽃 창까지 전부 가능해요</small></div>
+      </div>
+      <p class="hint" style="margin-top:14px">예시 (누르면 복사돼요)</p>
+      <button class="ex" type="button"><b>마왕</b>종족: 마왕 / 능력: 암흑 조작, 마검 소환, 마력 흡수</button>
+    </div>
+  </div>
+</section>
+
+<section id="cast">
+  <div class="wrap">
+    <h2>등장인물</h2>
+    <p class="lead">카드에 적힌 건 첫인상일 뿐. 나머지는 직접 확인하세요.</p>
+    <div id="castRoot"></div>
+  </div>
+</section>
+
+<section id="shortcuts" style="background:#fff;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)">
+  <div class="wrap">
+    <h2>단축어</h2>
+    <p class="lead">대부분은 있으면 편한 기능이에요. 아래 세 개만은 꼭 기억해 주세요.</p>
+    <div class="must">
+      <div class="box">
+        <span class="sticker">프로챗이면 필수</span>
+        <div class="cmd">/사칭금지🚫</div>
+        <div class="when">AI가 내 대사나 행동을 멋대로 썼을 때</div>
+        <p>뒤에 원래 하려던 내 행동이나 대사를 같이 적어요. AI가 쓴 부분을 그 내용으로 고쳐 다시 써 줘요.<br><b>예)</b> /사칭금지🚫 나는 대답 없이 자리를 떴다</p>
+      </div>
+      <div class="box">
+        <span class="sticker">프로챗이면 필수</span>
+        <div class="cmd">/이미지고치기🔧</div>
+        <div class="when">이미지가 안 뜨거나 엉뚱하게 나올 때</div>
+        <p>원인을 점검하고 테스트 이미지를 띄워요. 다음 응답부터 고쳐져요.</p>
+      </div>
+      <div class="box">
+        <span class="sticker">꼭 알아 두기</span>
+        <div class="cmd">/스킵⏩</div>
+        <div class="when">장면이 늘어지거나 시간을 넘기고 싶을 때</div>
+        <p>뒤에 어디까지 넘길지 같이 적어요. 아무것도 안 적으면 다음 날 아침까지 넘어가요.<br><b>예)</b> /스킵⏩ 오늘 저녁까지</p>
+      </div>
+    </div>
+    <h3 style="margin-top:6px">그 밖의 단축어</h3>
+    <div class="rest">
+      <div><span class="c">/개인DM📩</span><span class="d">아는 인물과 1:1 메시지</span></div>
+      <div><span class="c">/작전현황📋</span><span class="d">진행 중인 작전 다시 보기</span></div>
+      <div><span class="c">/뉴스·영상📺</span><span class="d">지금 화제인 뉴스와 영상</span></div>
+      <div><span class="c">/커뮤니티🔥</span><span class="d">시민들의 익명 게시판</span></div>
+      <div><span class="c">/도시지도🗺️</span><span class="d">내가 아는 구역과 주변 소식</span></div>
+      <div><span class="c">/인물도감📖</span><span class="d">알게 된 인물 정리</span></div>
+      <div><span class="c">/돌발사건⚡</span><span class="d">지금 이곳에서 사건 발생</span></div>
+      <div><span class="c">/빠른요약📝</span><span class="d">20~30턴마다 쓰면 기억이 오래가요</span></div>
+      <div><span class="c">/정보복구💾</span><span class="d">날아간 수치와 정보 되살리기</span></div>
+      <div><span class="c">/업데이트적용🔄</span><span class="d">작품 업데이트를 내 플레이에 반영</span></div>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="scrawl">화면 속 그녀들은 웃고 있다.</span>
+    <p style="margin-top:10px">만든 사람 상상놀이 · 크랙 롤플레이 작품</p>
+  </div>
+</footer>
+
+<script>
+const IMG = n => `https://raw.githubusercontent.com/Umgic/am/refs/heads/main/${encodeURIComponent(n)}_${encodeURIComponent('평상시')}.png`;
+
+const cast = [
+  {group:'마법소녀', note:'도시가 사랑하는 여덟 명', big:true, list:[
+    ['루비','#E8364E','마법소녀 리더 · 빨강','언제나 여유로운 미소의 리더. 카메라 앞에서는 누구보다 다정해요.'],
+    ['앰버','#FF8A2B','유흥업계 VIP · 주황','밤의 도시를 지배하는 파티의 여왕. 곁에는 늘 개 수인 애완이 따라다녀요.'],
+    ['써니','#FFC928','톱스타 · 노랑','도시에서 가장 유명한 얼굴. 전투조차 한 편의 공연으로 만들어요.'],
+    ['민티','#3FD3A8','음식평론가 · 민트','하루 종일 먹으러 다니는 미식가. 그녀의 리뷰 한 줄에 가게가 살고 죽어요.'],
+    ['마린','#2F7BEA','패션모델 · 파랑','완벽한 것만 허락하는 패션모델. 티끌 하나도 용서하지 않아요.'],
+    ['핑키','#FF6FB5','재벌영애 · 핑크','공주님 같은 재벌가 아가씨. 마음에 든 건 꼭 곁에 두고 예뻐해요.'],
+    ['아이리스','#9B5DE5','도시방위관 · 보라','귀여운 소환수들을 거느린 방위관. 일은 소환수들이 해요.'],
+    ['시엘','#6EC8F5','히어로 · 하늘색','거리를 지키는 착한 히어로. 아이들에게 인기가 많아요.']
+  ]},
+  {group:'이계인', note:'침략에 실패해 노예가 된 쪽', list:[
+    ['엘리','#C26A4A','용 수인 · 공주','몰락한 왕국의 공주. 겁이 많고 귀여운 것을 좋아해요.'],
+    ['록시','#7A7F8E','늑대 수인 · 도망자','붙잡히지 않은 몇 안 되는 이계인. 짓궂고 털털한 누나예요.'],
+    ['로라','#E9C9D6','토끼 수인 · 노역장 노동자','마석 공장에서 일하는 노동자. 해방이라는 말이 오히려 무서워요.'],
+    ['쿠키','#D9A066','개 수인 · 앰버의 애완','앰버를 주인님이라 부르는 해맑은 강아지. 말끝마다 멍멍.']
+  ]},
+  {group:'그 밖의 사람들', note:'정부, 방위군, 그리고 뒷골목', list:[
+    ['모니카','#4B4E6D','총리','마법소녀를 앞세워 도시를 이끄는 냉철한 총리.'],
+    ['헬레나','#6B705C','방위군 상급지휘관','훈장은 많고 전장은 멀리하는 지휘관.'],
+    ['에블린','#556B2F','최전선 중대장','방위구역 최전선을 직접 지키는 중대장. 부하를 먼저 챙겨요.'],
+    ['에이미','#C9A227','기자','마법소녀의 뒤를 캐는 집요한 기자.'],
+    ['스텔라','#F4A261','쇼 진행자','빅토리 페스타의 목소리. 무슨 일이 터져도 쇼는 계속돼요.'],
+    ['바네사','#8D5A97','암시장 상인','지하도시의 상인. 못 구하는 물건이 없다는 소문이 있어요.'],
+    ['베로니카','#33415C','마법소녀 전담 사법관','마법소녀가 지나간 자리를 정리하는 사법관.']
+  ]}
+];
+
+function render(data, rootId){
+  const root = document.getElementById(rootId);
+  data.forEach(g=>{
+    const wrap = document.createElement('div');
+    wrap.className='group';
+    wrap.innerHTML = `<div class="group-name"><h3>${g.group}</h3><span>${g.note}</span></div>`;
+    const grid = document.createElement('div');
+    grid.className = 'cards' + (g.big?'':' small');
+    g.list.forEach(([n,c,role,desc,secret])=>{
+      const card = document.createElement('article');
+      card.className='card';
+      card.style.setProperty('--c',c);
+      const body = secret
+        ? `<p class="face known"><small>알려진 얼굴</small>${desc}</p><p class="face hidden"><small>알려지지 않은 얼굴</small>${secret}</p>`
+        : `<p class="desc">${desc}</p>`;
+      card.innerHTML = `<div class="ph"><img loading="lazy" alt="${n}" src="${IMG(n)}"><span class="fb">${n[0]}</span></div>
+        <div class="info"${secret?' style="padding-bottom:0"':''}><div class="name"><span class="dot"></span>${n}</div><div class="role">${role}</div></div>${body}`;
+      const img = card.querySelector('img');
+      img.addEventListener('error',()=>{img.remove();card.querySelector('.ph').classList.add('noimg')});
+      grid.appendChild(card);
+    });
+    wrap.appendChild(grid);
+    root.appendChild(wrap);
+  });
+}
+render(cast,'castRoot');
+
+document.querySelectorAll('.ex').forEach(b=>{
+  b.addEventListener('click',async()=>{
+    const text = b.lastChild.textContent.trim();
+    try{await navigator.clipboard.writeText(text)}catch(e){}
+    b.classList.add('copied');
+    const t=b.querySelector('b'); const old=t.textContent; t.textContent='복사했어요';
+    setTimeout(()=>{b.classList.remove('copied');t.textContent=old},1400);
+  });
+});
+</script>
+</body>
+</html>
